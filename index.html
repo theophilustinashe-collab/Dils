@@ -170,6 +170,18 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 .tracksuit-type{font-family:'Space Mono',monospace;font-size:0.48rem;letter-spacing:5px;color:var(--blue-light);text-transform:uppercase;margin-bottom:8px;}
 .tracksuit-name{font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:4px;color:var(--off-white);line-height:1;margin-bottom:8px;}
 .tracksuit-desc{font-size:0.85rem;font-weight:300;color:rgba(240,237,232,0.48);letter-spacing:0.8px;max-width:280px;line-height:1.55;margin-bottom:20px;}
+.accessories-full{position:relative;width:100%;height:100vh;overflow:hidden;margin-top:70px;}
+.accessories-full video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(0.8) contrast(1.05);}
+.accessories-full::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(4,4,4,0.95) 0%,rgba(4,4,4,0.25) 45%,rgba(4,4,4,0.15) 70%,rgba(4,4,4,0.55) 100%);}
+.accessories-full-content{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:flex-end;padding:0 48px 80px;}
+.accessories-label{font-family:'Space Mono',monospace;font-size:0.5rem;letter-spacing:5px;color:var(--blue-light);text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:14px;}
+.accessories-label::before{content:'';display:inline-block;width:22px;height:1px;background:var(--blue-light);}
+.accessories-label.red{color:#ff3e3e;}
+.accessories-label.red::before{background:#ff3e3e;}
+.accessory-name{font-family:'Bebas Neue',sans-serif;font-size:clamp(3.5rem,7vw,7rem);letter-spacing:3px;line-height:0.9;margin-bottom:14px;}
+.accessory-desc{font-size:1rem;font-weight:300;color:rgba(240,237,232,0.55);letter-spacing:0.8px;max-width:420px;line-height:1.7;margin-bottom:26px;}
+.accessory-price{font-family:'Bebas Neue',sans-serif;font-size:3rem;color:var(--gold);letter-spacing:2px;line-height:1;margin-bottom:26px;display:flex;align-items:baseline;gap:10px;}
+.accessory-price span{font-family:'Space Mono',monospace;font-size:0.55rem;letter-spacing:2px;color:rgba(240,237,232,0.4);text-transform:uppercase;}
 
 /* ── SUBSCRIPTION SECTION ── */
 #membership{padding:130px 48px;background:var(--black);position:relative;overflow:hidden;}
@@ -452,6 +464,7 @@ footer{border-top:1px solid var(--border);padding:72px 48px 44px;display:grid;gr
   .sport-header-right{text-align:left;}
   .kits-grid{padding:0 24px;}
   .tracksuits-row{grid-template-columns:1fr;padding:40px 24px 0;gap:16px;}
+  .accessories-full-content{padding:0 24px 60px;}
 
   /* MEMBERSHIP */
   #membership{padding:80px 24px;}
@@ -547,8 +560,53 @@ footer{border-top:1px solid var(--border);padding:72px 48px 44px;display:grid;gr
     <video id="heroVideo1" class="hero-video active" autoplay muted loop playsinline poster="poster1.jpg">
       <source src="video1.mp4" type="video/mp4">
     </video>
-    <video id="heroVideo2" class="hero-video" autoplay muted loop playsinline>
+    <video class="hero-video" autoplay muted loop playsinline>
       <source src="video2.mp4" type="video/mp4">
+    </video>
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="first-kit.mp4" type="video/mp4">
+    </video>
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="third-kit.mp4" type="video/mp4">
+    </video>
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="muscle-top.mp4" type="video/mp4">
+    </video>
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="armbands.mp4" type="video/mp4">
+    </video>
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="cap.mp4" type="video/mp4">
+    </video>
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="crop-top.mp4" type="video/mp4">
+    </video>
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="culture-crop-top.mp4" type="video/mp4">
+    </video>
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="worldwide-tee.mp4" type="video/mp4">
+    </video>
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="topsoup4dils.mp4" type="video/mp4">
+    </video>
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="topsoup4dils-vol2.mp4" type="video/mp4">
+    </video>
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="trust-and-believe.mp4" type="video/mp4">
+    </video>
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="byni-dillion-tee.mp4" type="video/mp4">
+    </video>
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="limited-edition-garment.mp4" type="video/mp4">
+    </video>
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="cropped-jersey.mp4" type="video/mp4">
+    </video>
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="garment.mp4" type="video/mp4">
     </video>
   </div>
   <div class="hero-ticker">
@@ -691,6 +749,222 @@ footer{border-top:1px solid var(--border);padding:72px 48px 44px;display:grid;gr
         <a href="#" class="btn-gold" style="max-width:fit-content;font-size:0.52rem;padding:11px 26px;">Shop Now</a>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- FIRST KIT: FULL SCREEN -->
+<section class="accessories-full">
+  <video autoplay muted loop playsinline>
+    <source src="first-kit.mp4" type="video/mp4">
+  </video>
+  <div class="accessories-full-content">
+    <p class="accessories-label">The Grind — Sportswear</p>
+    <h2 class="accessory-name">24/7<br>FIRST KIT</h2>
+    <p class="accessory-desc">DILS 24/7 First Kit. Home colourway, "You Need It!" lettering, matchday-ready fit. Built for the grind, on and off the pitch.</p>
+    <div class="accessory-price">$25<span>/ kit</span></div>
+    <a href="#" class="btn-gold" style="max-width:fit-content;">Add to Cart</a>
+  </div>
+    <a href="#" class="btn-gold" style="max-width:fit-content;">Add to Cart</a>
+  </div>
+</section>
+
+<!-- THIRD KIT: FULL SCREEN -->
+<section class="accessories-full">
+  <video autoplay muted loop playsinline>
+    <source src="third-kit.mp4" type="video/mp4">
+  </video>
+  <div class="accessories-full-content">
+    <p class="accessories-label">The Grind — Sportswear</p>
+    <h2 class="accessory-name">25/26<br>THIRD KIT</h2>
+    <p class="accessory-desc">DILS 25/26 Third Kit. Alternate colourway, "You Need It!" lettering, matchday-ready fit. Built for the grind, on and off the pitch.</p>
+    <div class="accessory-price">$15<span>/ kit</span></div>
+    <a href="#" class="btn-gold" style="max-width:fit-content;">Add to Cart</a>
+  </div>
+    <a href="#" class="btn-gold" style="max-width:fit-content;">Add to Cart</a>
+  </div>
+</section>
+
+<!-- MUSCLE TOP: FULL SCREEN -->
+<section class="accessories-full">
+  <video autoplay muted loop playsinline>
+    <source src="muscle-top.mp4" type="video/mp4">
+  </video>
+  <div class="accessories-full-content">
+    <p class="accessories-label">The Grind — Sportswear</p>
+    <h2 class="accessory-name">MUSCLE<br>TOP</h2>
+    <p class="accessory-desc">DILS Muscle Top. Unisex fit, breathable stretch, subtle branding. Built for training, styled for the streets.</p>
+    <div class="accessory-price">$7<span>/ each</span></div>
+    <a href="#" class="btn-gold" style="max-width:fit-content;">Add to Cart</a>
+  </div>
+</section>
+
+<!-- ACCESSORIES: FULL SCREEN -->
+<section class="accessories-full">
+  <video autoplay muted loop playsinline>
+    <source src="armbands.mp4" type="video/mp4">
+  </video>
+  <div class="accessories-full-content">
+    <p class="accessories-label">Sports Range — Accessories</p>
+    <h2 class="accessory-name">SLEEVE<br>ARMBANDS</h2>
+    <p class="accessory-desc">DILS sleeve pair. Compression fit, breathable stretch, subtle branding. Grab-and-go for training or matchday.</p>
+    <div class="accessory-price">$5<span>/ pair</span></div>
+    <a href="#" class="btn-gold" style="max-width:fit-content;">Add to Cart</a>
+  </div>
+</section>
+
+<!-- CAP: FULL SCREEN -->
+<section class="accessories-full">
+  <video autoplay muted loop playsinline>
+    <source src="cap.mp4" type="video/mp4">
+  </video>
+  <div class="accessories-full-content">
+    <p class="accessories-label">Sports Range — Accessories</p>
+    <h2 class="accessory-name">MULTI-PURPOSE<br>CAP</h2>
+    <p class="accessory-desc">DILS cap. Adjustable fit, breathable panel, subtle branding. Built for training, streets, or matchday.</p>
+    <div class="accessory-price">$5<span>/ each</span></div>
+    <a href="#" class="btn-gold" style="max-width:fit-content;">Add to Cart</a>
+  </div>
+</section>
+
+<!-- CROP TOP: FULL SCREEN -->
+<section class="accessories-full">
+  <video autoplay muted loop playsinline>
+    <source src="crop-top.mp4" type="video/mp4">
+  </video>
+  <div class="accessories-full-content">
+    <p class="accessories-label red">The Hustle — Streetwear</p>
+    <h2 class="accessory-name">CROP<br>TOP</h2>
+    <p class="accessory-desc">DILS crop top. Cropped fit, soft heavyweight cotton, subtle branding. Streets to studio, made for the hustle.</p>
+    <div class="accessory-price">$8<span>/ each</span></div>
+    <a href="#" class="btn-gold" style="max-width:fit-content;">Add to Cart</a>
+  </div>
+</section>
+
+<!-- CULTURE CROP TOP: FULL SCREEN -->
+<section class="accessories-full">
+  <video autoplay muted loop playsinline>
+    <source src="culture-crop-top.mp4" type="video/mp4">
+  </video>
+  <div class="accessories-full-content">
+    <p class="accessories-label red">The Hustle — Streetwear</p>
+    <h2 class="accessory-name">CULTURE<br>CROP TOP</h2>
+    <p class="accessory-desc">DILS Culture Crop Top. Cropped fit, soft heavyweight cotton, culture-driven graphic. Streets to studio, made for the hustle.</p>
+    <div class="accessory-price">$8<span>/ each</span></div>
+    <a href="#" class="btn-gold" style="max-width:fit-content;">Add to Cart</a>
+  </div>
+</section>
+
+<!-- WORLDWIDE TEE: FULL SCREEN -->
+<section class="accessories-full">
+  <video autoplay muted loop playsinline>
+    <source src="worldwide-tee.mp4" type="video/mp4">
+  </video>
+  <div class="accessories-full-content">
+    <p class="accessories-label red">The Hustle — Streetwear</p>
+    <h2 class="accessory-name">WORLDWIDE<br>TEE</h2>
+    <p class="accessory-desc">DILS Worldwide Tee. Relaxed fit, heavyweight cotton, signature branding. Streets to studio, made for the hustle.</p>
+    <div class="accessory-price">$12<span>/ each</span></div>
+    <a href="#" class="btn-gold" style="max-width:fit-content;">Add to Cart</a>
+  </div>
+</section>
+
+<!-- TOPSOUP4DILS: FULL SCREEN -->
+<section class="accessories-full">
+  <video autoplay muted loop playsinline>
+    <source src="topsoup4dils.mp4" type="video/mp4">
+  </video>
+  <div class="accessories-full-content">
+    <p class="accessories-label red">The Hustle — Streetwear</p>
+    <h2 class="accessory-name">TOPSOUP4DILS</h2>
+    <p class="accessory-desc">Garment + Crop Top. Relaxed fit, heavyweight cotton, signature branding. Streets to studio, made for the hustle.</p>
+    <div class="accessory-price">$12<span>/ each</span></div>
+    <a href="#" class="btn-gold" style="max-width:fit-content;">Add to Cart</a>
+  </div>
+    <a href="#" class="btn-gold" style="max-width:fit-content;">Add to Cart</a>
+  </div>
+</section>
+
+<!-- TOPSOUP4DILS VOL. 2: FULL SCREEN -->
+<section class="accessories-full">
+  <video autoplay muted loop playsinline>
+    <source src="topsoup4dils-vol2.mp4" type="video/mp4">
+  </video>
+  <div class="accessories-full-content">
+    <p class="accessories-label red">The Hustle — Streetwear</p>
+    <h2 class="accessory-name">TOPSOUP4DILS<br>VOL. 2</h2>
+    <p class="accessory-desc">Garment + Crop Top. Relaxed fit, heavyweight cotton, signature branding. Streets to studio, made for the hustle.</p>
+    <div class="accessory-price">$12<span>/ each</span></div>
+    <a href="#" class="btn-gold" style="max-width:fit-content;">Add to Cart</a>
+  </div>
+</section>
+
+<!-- TRUST & BELIEVE: FULL SCREEN -->
+<section class="accessories-full">
+  <video autoplay muted loop playsinline>
+    <source src="trust-and-believe.mp4" type="video/mp4">
+  </video>
+  <div class="accessories-full-content">
+    <p class="accessories-label red">The Hustle — Streetwear</p>
+    <h2 class="accessory-name">TRUST &amp;<br>BELIEVE</h2>
+    <p class="accessory-desc">Trust & Believe Garment. Relaxed fit, heavyweight cotton, signature branding. Streets to studio, made for the hustle.</p>
+    <div class="accessory-price">$12<span>/ each</span></div>
+    <a href="#" class="btn-gold" style="max-width:fit-content;">Add to Cart</a>
+  </div>
+</section>
+
+<!-- BYNI DILLION TEE: FULL SCREEN -->
+<section class="accessories-full">
+  <video autoplay muted loop playsinline>
+    <source src="byni-dillion-tee.mp4" type="video/mp4">
+  </video>
+  <div class="accessories-full-content">
+    <p class="accessories-label red">The Hustle — Streetwear</p>
+    <h2 class="accessory-name">BYNI DILLION<br>TEE</h2>
+    <p class="accessory-desc">DILS Byni Dillion Tee. Relaxed fit, heavyweight cotton, signature branding. Streets to studio, made for the hustle.</p>
+    <div class="accessory-price">$12<span>/ each</span></div>
+    <a href="#" class="btn-gold" style="max-width:fit-content;">Add to Cart</a>
+  </div>
+</section>
+
+<!-- LIMITED EDITION GARMENT: FULL SCREEN -->
+<section class="accessories-full">
+  <video autoplay muted loop playsinline>
+    <source src="limited-edition-garment.mp4" type="video/mp4">
+  </video>
+  <div class="accessories-full-content">
+    <p class="accessories-label red">The Hustle — Streetwear</p>
+    <h2 class="accessory-name">LIMITED<br>EDITION</h2>
+    <p class="accessory-desc">DILS Limited Edition Garment. Retro graphic, relaxed fit, heavyweight cotton. Streets to studio, made for the hustle.</p>
+    <div class="accessory-price">$12<span>/ each</span></div>
+    <a href="#" class="btn-gold" style="max-width:fit-content;">Add to Cart</a>
+  </div>
+</section>
+
+<!-- CROPPED JERSEY: FULL SCREEN -->
+<section class="accessories-full">
+  <video autoplay muted loop playsinline>
+    <source src="cropped-jersey.mp4" type="video/mp4">
+  </video>
+  <div class="accessories-full-content">
+    <p class="accessories-label red">The Hustle — Streetwear</p>
+    <h2 class="accessory-name">CROPPED<br>JERSEY</h2>
+    <p class="accessory-desc">DILS Cropped Jersey. Cropped fit, heavyweight cotton, signature branding. Streets to studio, made for the hustle.</p>
+    <div class="accessory-price">$12<span>/ each</span></div>
+    <a href="#" class="btn-gold" style="max-width:fit-content;">Add to Cart</a>
+  </div>
+</section>
+
+<!-- GARMENT: FULL SCREEN -->
+<section class="accessories-full">
+  <video autoplay muted loop playsinline>
+    <source src="garment.mp4" type="video/mp4">
+  </video>
+  <div class="accessories-full-content">
+    <p class="accessories-label red">The Hustle — Streetwear</p>
+    <h2 class="accessory-name">GARMENT</h2>
+    <p class="accessory-desc">DILS Garment. Relaxed fit, heavyweight cotton, signature branding. Streets to studio, made for the hustle.</p>
+    <div class="accessory-price">$12<span>/ each</span></div>
+    <a href="#" class="btn-gold" style="max-width:fit-content;">Add to Cart</a>
   </div>
 </section>
 
@@ -1104,6 +1378,30 @@ const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').match
   });
 })();
 
+// ── PRODUCT SECTIONS (ACCESSORIES-FULL): VIDEO PARALLAX + STAGGERED TEXT REVEAL ──
+(function(){
+  document.querySelectorAll('.accessories-full').forEach(sec=>{
+    const vid = sec.querySelector('video');
+    const content = sec.querySelector('.accessories-full-content');
+    if(!content) return;
+    const items = content.querySelectorAll('.accessories-label, .accessory-name, .accessory-desc, .accessory-price, .btn-gold');
+
+    if(vid && !reduceMotion){
+      gsap.fromTo(vid, {scale:1.18, yPercent:-6}, {
+        scale:1, yPercent:6, ease:'none',
+        scrollTrigger:{ trigger:sec, start:'top bottom', end:'bottom top', scrub:0.6 }
+      });
+    }
+
+    if(reduceMotion) return;
+    gsap.set(items, {opacity:0, y:36});
+    gsap.to(items, {
+      opacity:1, y:0, duration:0.9, ease:'power3.out', stagger:0.1,
+      scrollTrigger:{ trigger:sec, start:'top 65%', once:true }
+    });
+  });
+})();
+
 // ── BRAND REVEAL TIMELINE (ScrollTrigger-driven) ──
 (function(){
   const rv = document.getElementById('reveal');
@@ -1268,12 +1566,12 @@ function showToast(msg){
   const t=document.getElementById('toast'); t.textContent=msg; t.classList.add('show');
   setTimeout(()=>t.classList.remove('show'),3000);
 }
-// Hero video rotation: crossfade between the two hero videos
+// Hero video rotation: crossfade between all hero videos (main brand reels + every product video)
 (function(){
-  var heroVideos = [document.getElementById('heroVideo1'), document.getElementById('heroVideo2')].filter(Boolean);
+  var heroVideos = Array.prototype.slice.call(document.querySelectorAll('.hero-right .hero-video'));
   if(heroVideos.length < 2) return;
   var current = 0;
-  var ROTATE_MS = 7000;
+  var ROTATE_MS = 5000;
   function showNext(){
     var next = (current + 1) % heroVideos.length;
     heroVideos[next].currentTime = 0;
