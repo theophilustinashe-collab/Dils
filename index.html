@@ -1,233 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="DILS — One Brand. Three Fits." />
-  <title>DILS — One Brand. Three Fits.</title>
-  <link rel="icon" href="favicon.ico" sizes="any" />
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
-  <style>
-    :root{
-      --black:#040404;
-      --off-white:#f0ede8;
-      --blue:#1a4fff;
-      --blue-light:#4d79ff;
-      --gold:#c9a84c;
-      --gold-light:#e2c97e;
-      --mid:#111111;
-      --border:rgba(255,255,255,0.08);
-      --border-gold:rgba(201,168,76,0.25);
-      --green:#25D366;
-      --ecocash:#F47920;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DILS — One Brand. Three Fits.</title>
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
+<link href="https://fonts.googleapis.com/css2?familyuf[78py=Bebas+Neue&family=Space+Mono:wght@400;700&family=Barlow+Condensed:wght@300;400;600;700;900&family=Playfair+Display:ital,wght@0,700;1,400&dis[...]">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<style>
+:root{
+  --black:#040404;--off-white:#f0ede8;--blue:#1a4fff;--blue-light:#4d79ff;
+  --gold:#c9a84c;--gold-light:#e2c97e;--mid:#111111;--mid2:#0d0d0d;
+  --border:rgba(255,255,255,0.07);--border-gold:rgba(201,168,76,0.2);
+  --green:#25D366;--ecocash:#F47920;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--black);color:var(--off-white);font-family:'Barlow Condensed',sans-serif;overflow-x:hidden;}
 
-    *{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{
-      background:var(--black);
-      color:var(--off-white);
-      font-family:'Barlow Condensed', Arial, sans-serif;
-      overflow-x:hidden;
-      line-height:1.4;
-    }
-    a{color:inherit;text-decoration:none}
-    img,video{display:block;max-width:100%}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:center;justify-content:space-between;padding:20px 48px;background:rgba(4,4,4,0.92);backdrop-filter:blur(20px);border-bottom[...]
+.nav-logo{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;letter-spacing:8px;color:var(--off-white);text-decoration:none;position:relative;z-index:2;display:inline-flex;align-items:center;}
+.nav-logo span{color:var(--gold);}
+.nav-logo-img{height:32px;width:auto;display:block;}
+.nav-links{display:flex;gap:32px;list-style:none;align-items:center;}
+.nav-links a{font-family:'Space Mono',monospace;font-size:0.56rem;letter-spacing:3px;text-transform:uppercase;color:rgba(240,237,232,0.4);text-decoration:none;transition:color 0.2s;}
+.nav-links a:hover{color:var(--off-white);}
+.nav-btn{background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--black)!important;padding:9px 20px;font-weight:700;opacity:1!important;transition:opacity 0.2s!important;}
+.nav-btn:hover{opacity:0.85!important;}
+.nav-insta{display:flex;align-items:center;gap:6px;font-family:'Space Mono',monospace;font-size:0.56rem;letter-spacing:2px;color:rgba(240,237,232,0.4)!important;text-decoration:none;transition:color 0[...]
+.nav-insta:hover{color:#e1306c!important;}
+.nav-insta svg{width:13px;height:13px;fill:currentColor;}
+.nav-toggle{display:none;width:38px;height:38px;background:none;border:none;cursor:pointer;position:relative;z-index:520;padding:0;flex-shrink:0;}
+.nav-toggle span{display:block;position:absolute;left:6px;right:6px;height:2px;background:var(--off-white);border-radius:2px;transition:transform 0.3s ease,opacity 0.3s ease;}
+.nav-toggle span:nth-child(1){top:13px;}
+.nav-toggle span:nth-child(2){top:19px;}
+.nav-toggle span:nth-child(3){top:25px;}
+.nav-toggle.open span:nth-child(1){transform:translateY(6px) rotate(45deg);}
+.nav-toggle.open span:nth-child(2){opacity:0;}
+.nav-toggle.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg);}
 
-    nav{
-      position:fixed;top:0;left:0;right:0;z-index:500;
-      display:flex;align-items:center;justify-content:space-between;
-      padding:18px 48px;
-      background:rgba(4,4,4,0.9);
-      backdrop-filter:blur(12px);
-      border-bottom:1px solid var(--border);
-    }
-    .nav-logo{display:inline-flex;align-items:center;gap:10px;letter-spacing:6px;text-transform:uppercase;font-weight:700}
-    .nav-logo span{color:var(--gold)}
-    .nav-links{display:flex;align-items:center;gap:28px;list-style:none}
-    .nav-links a{font-size:0.56rem;letter-spacing:3px;text-transform:uppercase;color:rgba(240,237,232,0.42);transition:color .2s ease}
-    .nav-links a:hover{color:var(--off-white)}
-    .nav-btn{background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--black)!important;padding:9px 18px;font-weight:700;border-radius:999px}
-    .nav-toggle{display:none}
+/* HERO */
+#hero{height:100vh;display:grid;grid-template-columns:55% 45%;position:relative;overflow:hidden;}
+.hero-left{display:flex;flex-direction:column;justify-content:flex-end;padding:100px 48px 80px;position:relative;z-index:2;background:linear-gradient(to right,var(--black) 55%,transparent);}
+.hero-eyebrow{font-family:'Space Mono',monospace;font-size:0.54rem;letter-spacing:6px;color:var(--gold);text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;gap:14px;}
+.hero-eyebrow::before{content:'';display:inline-block;width:28px;height:1px;background:var(--gold);}
+.hero-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(5rem,9.5vw,10.5rem);line-height:0.88;letter-spacing:3px;}
+.hero-title .accent{color:var(--blue);}
+.hero-title .gld{color:var(--gold);}
+.hero-title .word{display:inline-block;overflow:hidden;}
+.hero-title .word-inner{display:inline-block;will-change:transform;}
+.hero-divider{width:52px;height:1px;background:linear-gradient(to right,var(--gold),transparent);margin:26px 0;}
+.hero-sub{font-size:1rem;font-weight:300;letter-spacing:1.5px;color:rgba(240,237,232,0.5);max-width:380px;line-height:1.75;}
+.hero-cta{margin-top:40px;display:flex;gap:12px;}
+.btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--black);padding:14px 34px;font-family:'Space Mono',monospace;font-size:0.58rem;letter-spacing:3px;text-transform:u[...]
+.btn-gold:hover{transform:translateY(-3px);box-shadow:0 12px 36px rgba(201,168,76,0.3);}
+.btn-ghost{border:1px solid rgba(240,237,232,0.18);color:var(--off-white);padding:14px 34px;font-family:'Space Mono',monospace;font-size:0.58rem;letter-spacing:3px;text-transform:uppercase;background:[...]
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-3px);}
+.hero-stats{position:absolute;bottom:56px;left:48px;z-index:3;display:flex;gap:44px;}
+.stat{display:flex;flex-direction:column;gap:4px;}
+.stat-num{font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:2px;color:var(--gold);line-height:1;}
+.stat-label{font-family:'Space Mono',monospace;font-size:0.46rem;letter-spacing:3px;color:rgba(240,237,232,0.3);text-transform:uppercase;}
+.hero-right{position:absolute;inset:0;width:100%;height:100%;overflow:hidden;z-index:0;}
+.hero-right video,.hero-right img{width:100%;height:100%;object-fit:cover;object-position:center top;filter:contrast(1.08) saturate(0.75);}
+.hero-right video{position:absolute;inset:0;opacity:0;transition:opacity 1.4s ease;z-index:0;}
+.hero-right video.active{opacity:1;z-index:1;}
+.hero-right::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,var(--black) 0%,transparent 25%),linear-gradient(to top,var(--black) 0%,transparent 20%);}
+.hero-ticker{position:absolute;bottom:0;left:0;right:0;z-index:10;background:rgba(201,168,76,0.07);border-top:1px solid var(--border-gold);overflow:hidden;height:36px;display:flex;align-items:center;}
+.ticker-inner{display:flex;gap:56px;white-space:nowrap;animation:ticker 28s linear infinite;font-family:'Space Mono',monospace;font-size:0.52rem;letter-spacing:5px;color:rgba(201,168,76,0.55);text-tra[...]
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
-    #hero{
-      position:relative;
-      min-height:100vh;
-      display:grid;
-      grid-template-columns:55% 45%;
-      overflow:hidden;
-      background:var(--black);
-    }
-    .hero-left{
-      position:relative;z-index:2;
-      display:flex;flex-direction:column;justify-content:flex-end;
-      padding:100px 48px 88px;
-      background:linear-gradient(to right,var(--black) 58%,transparent 100%);
-    }
-    .hero-eyebrow{
-      display:inline-flex;align-items:center;gap:14px;
-      margin-bottom:18px;
-      font-family:'Space Mono', monospace;
-      font-size:0.54rem;letter-spacing:6px;text-transform:uppercase;color:var(--gold)
-    }
-    .hero-eyebrow::before{content:'';display:inline-block;width:28px;height:1px;background:var(--gold)}
-    .hero-title{
-      font-family:'Bebas Neue', 'Arial Narrow', sans-serif; font-size: clamp(4rem,9vw,10rem);
-      line-height:0.88;letter-spacing:3px;
-    }
-    .hero-title .accent{color:var(--blue)}
-    .hero-title .gold{color:var(--gold)}
+/* SOCIAL STRIP */
+.social-strip{background:var(--mid);border-bottom:1px solid var(--border);padding:10px 48px;display:flex;align-items:center;justify-content:space-between;}
+.social-strip-left{font-family:'Space Mono',monospace;font-size:0.48rem;letter-spacing:3px;color:rgba(240,237,232,0.28);text-transform:uppercase;}
+.social-strip-right{display:flex;gap:14px;}
+.social-pill{display:flex;align-items:center;gap:7px;font-family:'Space Mono',monospace;font-size:0.48rem;letter-spacing:2px;text-transform:uppercase;text-decoration:none;padding:7px 15px;border:1px s[...]
+.social-pill svg{width:12px;height:12px;fill:currentColor;}
+.social-pill.insta{color:#e1306c;border-color:rgba(225,48,108,0.3);}
+.social-pill.insta:hover{background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);color:white;border-color:transparent;}
+.social-pill.wa{color:var(--green);border-color:rgba(37,211,102,0.3);}
+.social-pill.wa:hover{background:var(--green);color:white;border-color:var(--green);}
 
-    .hero-divider{width:52px;height:1px;background:linear-gradient(to right,var(--gold),transparent);margin:24px 0}
-    .hero-sub{max-width:380px;font-size:1rem;color:rgba(240,237,232,0.62);line-height:1.7;letter-spacing:0.7px}
-    .hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
-    .btn-gold,.btn-ghost{
-      display:inline-flex;align-items:center;justify-content:center;
-      min-height:48px;padding:14px 28px;
-      font-family:'Space Mono', monospace; font-size:0.58rem; letter-spacing:3px; text-transform:uppercase;
-      transition:transform .2s ease, opacity .2s ease, border-color .2s ease, color .2s ease;
-    }
-    .btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--black);font-weight:700}
-    .btn-ghost{border:1px solid rgba(240,237,232,0.18);color:var(--off-white);background:transparent}
-    .btn-gold:hover,.btn-ghost:hover{transform:translateY(-2px)}
-    .btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+/* SECTION COMMON */
+.section-eyebrow{font-family:'Space Mono',monospace;font-size:0.53rem;letter-spacing:6px;color:var(--gold);text-transform:uppercase;display:flex;align-items:center;gap:14px;margin-bottom:14px;}
+.section-eyebrow::before{content:'';display:inline-block;width:22px;height:1px;background:var(--gold);}
+.section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.8rem,5.5vw,5rem);line-height:0.92;letter-spacing:2px;}
+.sr{opacity:0;transform:translateY(32px);}
+.sr.vis{opacity:1;transform:translateY(0);}
 
-    .hero-stats{
-      position:absolute;left:48px;bottom:56px;display:flex;gap:44px;
-    }
-    .stat{display:flex;flex-direction:column;gap:4px}
-    .stat-num{font-family:'Bebas Neue', 'Arial Narrow', sans-serif; font-size:2rem; color:var(--gold); line-height:1}
-    .stat-label{font-family:'Space Mono', monospace; font-size:0.46rem; letter-spacing:3px; text-transform:uppercase; color:rgba(240,237,232,0.32)}
+/* JOURNEY */
+#journey{padding:130px 0 0;}
+.journey-header{text-align:center;padding:0 48px 90px;}
+.journey-header .section-eyebrow{justify-content:center;}
+[...]
 
-    .hero-right{
-      position:relative;min-height:100vh;overflow:hidden;background:
-        radial-gradient(circle at top, rgba(26,79,255,0.18), transparent 35%),
-        linear-gradient(180deg, #0d0d0d 0%, #040404 100%);
-    }
-    .hero-video-wrap{position:absolute;inset:0}
-    .hero-media{
-      width:100%;height:100%;object-fit:cover;object-position:center top;
-      background:#101010;
-      opacity:0;
-      transition:opacity .35s ease;
-    }
-    .hero-media.ready{opacity:1}
-    .hero-media[data-src=""]{opacity:0}
-    .video-fade{position:absolute;inset:0;background:linear-gradient(to right,var(--black) 0%,transparent 30%),linear-gradient(to top,var(--black) 0%,transparent 25%)}
+</style>
 
-    .hero-ticker{
-      position:absolute;left:0;right:0;bottom:0;height:36px;
-      background:rgba(201,168,76,0.07);border-top:1px solid var(--border-gold);
-      display:flex;align-items:center;overflow:hidden;
-    }
-    .ticker-inner{
-      display:flex;gap:52px;white-space:nowrap;min-width:max-content;
-      padding-left:12px;
-      font-family:'Space Mono', monospace;font-size:0.52rem;letter-spacing:5px;color:rgba(201,168,76,0.6);text-transform:uppercase;
-      animation:ticker 28s linear infinite;
-    }
-    @keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-
-    @media (max-width:900px){
-      nav{padding:16px 22px}
-      .nav-links{display:none}
-      .nav-toggle{display:block;width:38px;height:38px;background:none;border:none;position:relative;cursor:pointer}
-      .nav-toggle span{display:block;position:absolute;left:6px;right:6px;height:2px;background:var(--off-white);border-radius:2px;transition:all .2s ease}
-      .nav-toggle span:nth-child(1){top:13px}
-      .nav-toggle span:nth-child(2){top:19px}
-      .nav-toggle span:nth-child(3){top:25px}
-      .nav-toggle.open span:nth-child(1){transform:translateY(6px) rotate(45deg)}
-      .nav-toggle.open span:nth-child(2){opacity:0}
-      .nav-toggle.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
-
-      #hero{grid-template-columns:1fr}
-      .hero-left{padding:120px 24px 52px;background:linear-gradient(to top,var(--black) 58%,rgba(4,4,4,0.28) 100%)}
-      .hero-right{min-height:52vh}
-      .hero-media{position:static;width:100%;height:100%;max-height:55vh;opacity:1}
-      .video-fade{display:none}
-      .hero-stats{position:static;margin-top:18px;gap:24px}
-    }
-  </style>
-</head>
 <body>
-  <nav>
-    <a href="#" class="nav-logo" aria-label="DILS home"><span>D</span>ILS</a>
-    <ul class="nav-links">
-      <li><a href="#journey">Journey</a></li>
-      <li><a href="#sportswear-collection">Sportswear</a></li>
-      <li><a href="#membership">Membership</a></li>
-      <li><a href="#">Instagram</a></li>
-      <li><a href="#" class="nav-btn">Account</a></li>
-    </ul>
-    <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
-  </nav>
 
-  <section id="hero">
-    <div class="hero-left">
-      <p class="hero-eyebrow">26/27 Season — New Collection</p>
-      <h1 class="hero-title">ONE<br><span class="accent">BRAND.</span><br><span class="gold">THREE</span><br>FITS.</h1>
-      <div class="hero-divider"></div>
-      <p class="hero-sub">DILS blends urban streetwear, high-performance sportswear, and timeless formal styles — transition from streets to high-class living.</p>
-      <div class="hero-cta">
-        <a href="#journey" class="btn-gold">The Journey</a>
-        <a href="#membership" class="btn-ghost">Join DILS</a>
+<nav>
+  <a href="#" class="nav-logo"> <span>DILS</span></a>
+  <ul class="nav-links">
+    <li><a href="#journey">Journey</a></li>
+    <li><a href="#sportswear-collection">Sportswear</a></li>
+    <li><a href="#membership">Membership</a></li>
+    <li><a href="https://instagram.com/dils.inc" target="_blank" rel="noreferrer" class="nav-insta">Instagram</a></li>
+    <li><a href="#" class="nav-btn">Account</a></li>
+  </ul>
+  <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+</nav>
+
+<section id="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">26/27 Season — New Collection</div>
+    <h1 class="hero-title">ONE <span class="accent">BRAND.</span> <span class="gld">THREE</span> FITS.</h1>
+    <div class="hero-divider"></div>
+    <p class="hero-sub">DILS blends urban streetwear, high-performance sportswear, and timeless formal styles — transition from streets to high-class living.</p>
+    <div class="hero-cta"><a href="#journey" class="btn-gold">The Journey</a> <a href="#membership" class="btn-ghost">Join DILS</a></div>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-num">3</div><div class="stat-label">Collections</div></div>
+      <div class="stat"><div class="stat-num">26</div><div class="stat-label">New Pieces</div></div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <video class="hero-media" autoplay muted loop playsinline poster="poster1.jpg">
+      <source src="video1.mp4" type="video/mp4">
+    </video>
+    <div class="hero-ticker"><div class="ticker-inner">Streetwear · Sportswear · Formalwear · Because You Need It · 26/27 Season · DILS.INC · Designs Inspired Luxury & Sportswear ®</div></div>
+  </div>
+</section>
+
+<!-- Journey -->
+<section id="journey">
+  <div class="journey-header container">
+    <div class="section-eyebrow">Our Journey</div>
+    <h2 class="section-title">From Streets to Runways</h2>
+    <p class="sr">Started in 20XX, DILS has focused on bringing together hand-crafted tailoring with functional sportswear.</p>
+  </div>
+
+  <div class="container">
+    <!-- multiple grid sections with images and videos -->
+    <div class="grid">
+      <div class="card">
+        <img src="journey1.jpg" alt="Design concept" />
+        <p class="sr">Design concept and sketches.</p>
       </div>
-      <div class="hero-stats">
-        <div class="stat">
-          <div class="stat-num">3</div>
-          <div class="stat-label">Collections</div>
-        </div>
+      <div class="card">
+        <video data-src="journey-video.mp4" muted playsinline preload="none" poster="journey-poster.jpg"></video>
+        <p class="sr">Behind the scenes footage.</p>
       </div>
     </div>
+  </div>
+</section>
 
-    <div class="hero-right">
-      <div class="hero-video-wrap">
-        <video class="hero-media" muted loop playsinline preload="none" data-src=""></video>
-      </div>
-      <div class="video-fade"></div>
-      <div class="hero-ticker" aria-hidden="true">
-        <div class="ticker-inner">Streetwear · Sportswear · Formalwear · Because You Need It · 26/27 Season · DILS.INC · Designs Inspired Luxury & Sportswear ®</div>
+<!-- Sportswear collection -->
+<section id="sportswear-collection">
+  <div class="container">
+    <div class="section-eyebrow">Collection</div>
+    <h2 class="section-title">Sportswear</h2>
+    <div class="grid">
+      <article class="product-card">
+        <img src="product1.jpg" alt="Product 1" />
+        <h3>Runner Jacket</h3>
+        <p class="sr">Lightweight, breathable, and reflective.</p>
+      </article>
+      <article class="product-card">
+        <video data-src="product2.mp4" muted playsinline preload="none" poster="product2.jpg"></video>
+        <h3>Performance Short</h3>
+        <p class="sr">High-mobility fabric and moisture-wicking.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Membership -->
+<section id="membership">
+  <div class="container">
+    <div class="section-eyebrow">Membership</div>
+    <h2 class="section-title">Join DILS</h2>
+    <p>Become part of the club for early access and exclusive drops.</p>
+    <div class="sr"><button class="btn-gold">Join Now</button></div>
+  </div>
+</section>
+
+<!-- Payments & Footer -->
+<footer>
+  <div class="container">
+    <div class="social-strip">
+      <div class="social-strip-left">Contact</div>
+      <div class="social-strip-right">
+        <a class="social-pill insta" href="https://instagram.com/dils.inc" target="_blank" rel="noreferrer">Instagram</a>
+        <a class="social-pill wa" href="https://wa.me/123456789" target="_blank" rel="noreferrer">WhatsApp</a>
       </div>
     </div>
-  </section>
+    <p style="padding:28px 0;opacity:0.6">© DILS 2026</p>
+  </div>
+</footer>
 
-  <script>
-    (() => {
-      const mediaQuery = window.matchMedia('(max-width: 680px)');
-      const heroVideo = document.querySelector('.hero-media');
-      if (!heroVideo) return;
+<script>
+// Lightweight JS for lazy-loading non-hero videos and simple interactions
+(function(){
+  // Defer heavy hero autoplay for mobile by using poster-only initially
+  document.addEventListener('DOMContentLoaded', function(){
+    var hero = document.querySelector('.hero-media');
+    if(hero && window.innerWidth >= 680){
+      // ensure the source is set on larger screens
+      var src = hero.querySelector('source');
+      if(src && !src.getAttribute('src')) src.setAttribute('src', 'video1.mp4');
+      try{ hero.load(); hero.play(); }catch(e){}
+    }
 
-      const loadHeroVideo = () => {
-        if (mediaQuery.matches) return;
-        if (!heroVideo.dataset.src) return;
+    // lazy load other videos when visible
+    var observer = new IntersectionObserver(function(entries, obs){
+      entries.forEach(function(entry){
+        if(!entry.isIntersecting) return;
+        var v = entry.target;
+        var s = v.getAttribute('data-src');
+        if(s){ v.innerHTML = '<source src="'+s+'" type="video/mp4">'; v.load(); v.addEventListener('loadeddata', function(){ try{ v.play(); }catch(e){} }); }
+        obs.unobserve(v);
+      });
+    }, { rootMargin: '200px 0px' });
+    document.querySelectorAll('video[data-src]').forEach(function(v){ observer.observe(v); });
 
-        const source = heroVideo.dataset.src;
-        if (!source) return;
+  });
+})();
+</script>
 
-        heroVideo.src = source;
-        heroVideo.load();
-        heroVideo.addEventListener('loadeddata', () => {
-          heroVideo.classList.add('ready');
-          heroVideo.play().catch(() => {});
-        }, { once: true });
-      };
-
-      // Delay until after page load so initial render stays fast.
-      window.addEventListener('load', () => {
-        setTimeout(loadHeroVideo, 150);
-      }, { once: true });
-
-      const toggle = document.querySelector('.nav-toggle');
-      const links = document.querySelector('.nav-links');
-      if (toggle && links) {
-        toggle.addEventListener('click', () => {
-          toggle.classList.toggle('open');
-          links.style.display = links.style.display === 'flex' ? 'none' : 'flex';
-        });
-      }
-    })();
-  </script>
 </body>
 </html>
